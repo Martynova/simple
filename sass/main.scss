@@ -1,0 +1,538 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$primary-color: #bfbfbf;
+$wrapper-color: #cdcdcd;
+
+@mixin box-shadow($radius){
+  -webkit-box-shadow: $radius;
+  -moz-box-shadow: $radius;
+  box-shadow: $radius;
+}
+@mixin margin_overflow{
+  margin: 0 auto;
+  overflow: hidden;
+}
+@mixin fontSize_pad($font,$pads...){
+  font-size: $font;
+  padding: $pads;
+};
+
+html, body{
+  height: 100%;
+  max-width: 100%;
+  background: $primary-color ;
+  font-size: 14px;
+  font-family: $font-stack;
+  line-height: 18px;
+
+
+}
+/*WRAPPER
+-----------------------------------------------------------------------------*/
+
+.wrapper {
+  max-width: 1200px;
+  width: 1200px;
+  margin: 0 auto;
+  background: $wrapper-color;
+  padding: 51px 0 81px 0;
+  @include box-shadow(0 0 5px 0 rgba(0, 0, 0, 0.24));
+
+/*WRAPPER-MAIN
+-----------------------------------------------------------------------------*/
+.wrapper-main {
+  max-width: 950px;
+  width: 950px;
+  background-color: #fff;
+  @include margin_overflow;
+  @include box-shadow(0 0 5px 0 rgba(0, 0, 0, 0.24));
+
+}
+}
+  /*HEADER
+  --------------------------------------------------------------------------*/
+.header{
+
+    @include margin_overflow;
+    .line-container{
+      height: 10px;
+      background-color: #e1e1e1;
+    }
+        .logo{
+          height: 109px;
+          border-bottom: dotted 1px #bababa;
+          overflow: hidden;
+
+          .logo-name{
+            @include fontSize_pad(28px, 46px 0 0 36px);
+            display: block;
+            float: left;
+
+            .logo-gray{
+              color: #8f8f8f;
+            }
+
+            .logo-brown{
+              color: #75533d;
+            }
+
+            .logo-gray-small{
+
+              color:  #8f8f8f;
+
+            }
+
+          }
+          .logo-question{
+            display: block;
+            float: right;
+            padding: 44px 44px 0 0;
+
+            .logo-gray{
+              color: #9e9e9e;
+            }
+
+            .logo-gray-sm{
+              color:#626262;
+            }
+
+            .logo-gray-number{
+               font-size: 18px;
+               color:#626262;
+               float: right;
+            }
+          }
+        }
+  /*  .navigation {
+      min-width: 950px;
+      padding: 26px 24px ;
+      float: left;
+      overflow: hidden;
+
+      & li {
+        display: inline-block;
+        position: relative;
+
+        float: left;
+        list-style: none;
+
+        & a {
+          //display: block;
+          text-transform: uppercase;
+          padding-left: 24px;
+          padding-right: 24px;
+          text-decoration: none;
+          color: #423329;
+          text-align: left;
+          border-left: dotted 1px #bababa;
+          outline: none;
+
+          &.first_child {
+            border-left: none;
+            padding-left: 18px;
+          }
+
+        }
+
+      }
+    }*/
+  /*NAVIGATION
+-----------------------------------------------------------------------------*/
+  .navigation {
+    float: left;
+    width: 100%;
+    position: relative;
+    height: 100%;
+
+    ul{
+      clear:left;
+      float:left;
+      list-style:none;
+      position:relative;
+      left:50%;
+      text-align:center;
+
+      li{
+        display:block;
+        float:left;
+        list-style:none;
+        padding: 26px 0 25px 0;
+        position:relative;
+        right:50%;
+
+        a{
+          display:block;
+          text-transform: uppercase;
+          padding:0 24px;
+          text-decoration: none;
+          color: #423329;
+          border-left: dotted 1px #bababa;
+          line-height:16px;
+
+          &.first_child {
+            border-left: none;
+          }
+        }
+      }
+      li:hover{
+        display: block;
+        background-color: #e1e1e1;
+      }
+    }
+  }
+}
+/*FINISH HEADER
+ --------------------------------------------------------------------------*/
+ /*MAIN-CONTAINER
+  ---------------------------------------------------------------------------*/
+.main-container{
+
+  overflow: hidden;
+}
+/*SLIDER-BOX
+ ---------------------------------------------------------------------------*/
+  .slider-box{
+    position: relative;
+    width: 100%;
+    height: 261px;
+    overflow: hidden;
+
+    #slider{
+      position: relative;
+
+      & img{
+        float: left;
+      }
+    }
+
+    .prev, .next{
+        position: absolute;
+        display: block;
+        cursor: pointer;
+        height: 71px;
+        width: 71px;
+        top: 103px;
+      }
+
+      .prev{
+        left: 26px;
+        background: url("../img/arrowleft.png") no-repeat 0 0;
+      }
+
+      .next{
+        right: 26px;
+        background: url("../img/arrowright.png") no-repeat 0 0;
+      }
+  }
+/*CONTENT
+---------------------------------------------------------------------------*/
+  .content{
+    padding: 43px 0 46px 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    .aside{
+      width: 29%;
+      float: left;
+      @include fontSize_pad(22px, 0 36px 0 36px);
+      color: #6b7a17;
+      line-height: 40px;
+      max-height: 100%;
+
+      .button-aside{
+        margin-top:36px;
+        text-align: center;
+        width: 55%;
+        height: 43px;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 43px;
+        text-decoration: none;
+        background: #d9d9d9;
+        border: 2px solid #d9d9d9;
+        border-radius: 3px;
+        cursor: pointer;
+        color: #818181;
+        outline: none;
+        font-weight: 600;
+        text-shadow: -1px 2px 2px rgba(235, 235, 235, 1);
+            }
+
+      .button-aside:active, :focus, :hover{
+        background: none;
+      }
+
+      .claim-left{
+        margin-top: 28px;
+        height: 13px;
+        background: url("../img/claim.png") no-repeat 0 0;
+      }
+   }
+    .article{
+
+      float: right;
+      width: 57%;
+      left: 350px;
+      padding-right: 50px;
+
+      .font-h2{
+        font-size: 28px;
+        font-weight: 400;
+        color: #454545;
+        line-height: 34px;
+      }
+
+      .font{
+        font-size: 16px;
+        line-height: 26px;
+        color: #818181;
+      }
+
+      p{
+        font-size: 14px;
+        line-height: 26px;
+      }
+
+      .button-content{
+        margin-top:36px;
+        text-align: center;
+        width: 32%;
+        height: 43px;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 41px;
+        text-decoration: none;
+        background: #75533d;
+        border: 2px solid #75533d;
+        border-radius: 3px;
+        cursor: pointer;
+        color: #fff;
+        outline: none;
+        font-weight: 600;
+        text-shadow: 0 1px 1px rgba(85, 59, 41, 1);
+      }
+
+      .button-content:hover, :active, :focus{
+        background: none;
+        color: #75533d;
+      }
+
+      .claim-right{
+        width: 63%;
+        margin-top: 55px;
+       float: right;
+        height: 13px;
+        background: url("../img/claim.png") no-repeat 0 0;
+      }
+    }
+
+}
+/*FINISH MAIN-CONTAINER
+---------------------------------------------------------------------------*/
+
+/* FOOTER
+-----------------------------------------------------------------------------*/
+.footer {
+  border-top: 1px solid #dbdbdb;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  padding: 30px 40px 25px 50px;
+
+  .container{
+    height: 100%;
+    border-bottom: 1px solid #dbdbdb;
+    color: #4a4a4a;
+    text-align: left;
+    overflow: hidden;
+
+  .col {
+    float: left;
+    width: 25%;
+
+     a{
+       text-decoration: none;
+       list-style:none;
+       font-size: 12px;
+       line-height: 24px;
+       color: #4a4a4a;
+     }
+    a:hover{
+      color: #818181;
+    }
+
+    h3 {
+      font-weight: 600;
+      text-transform: uppercase;
+      @include fontSize_pad(14px, 0 0 25px 0);
+
+    }
+    p{
+      font-size: 12px;
+      line-height: 24px;
+      margin-right: 65px;
+    }
+  }
+}
+    .info{
+
+      width: 100%;
+      font-weight: 400;
+      @include fontSize_pad(12px, 25px 0 0 0);
+      line-height: 36px;
+      color: #4a4a4a;
+      text-align: left;
+      margin-right: 65px;
+
+
+      .info-left{
+        display: block;
+        float: left;
+      }
+      .info-right{
+        display: block;
+        float: right;
+      }
+    }
+}
+
+/* FINISH FOOTER
+-----------------------------------------------------------------------------*/
+
+
+/* MEDIA
+-----------------------------------------------------------------------------*/
+@media screen and (max-width: 600px) {
+  /* WRAPPER
+  -----------------------------------------------------------------------------*/
+.wrapper{
+  max-width: 600px;
+  margin: 0;
+  padding: 10px;
+  .wrapper-main{
+    max-width: 600px;
+    margin: 0;
+    padding: 0;
+  }
+
+}
+  /* HEADER
+    -----------------------------------------------------------------------------*/
+  .header{
+    margin: 0;
+
+    .logo{
+      .logo-name{
+        font-size: 12px;
+      }
+      .logo-question{
+      font-size: 10px;
+      }
+    }
+  }
+  /* NAVIGATION
+      -----------------------------------------------------------------------------*/
+  .header .navigation {
+    height: 100%;
+
+    ul{
+      width: 100%;
+      display: block;
+
+      li{
+        width:100%;
+        padding: 10px 0;
+        line-height: 16px;
+
+      a{
+        text-align: left;
+        text-indent: 25px;
+        font-size: 10px;
+        border-left: none;
+        padding: 0;
+        }
+      }
+    }
+ }
+  /* FINISH HEADER
+   -----------------------------------------------------------------------------*/
+
+  /*MAIN-CONTAINER
+  ---------------------------------------------------------------------------*/
+
+  /*CONTENT
+---------------------------------------------------------------------------*/
+
+ .content .aside{
+    font-size: 14px;
+    line-height: 25px;
+    padding-left: 25px;
+    padding-right: 0;
+
+    .button-aside{
+      font-size: 12px;
+    }
+   .claim-left{
+    display: none;
+   }
+ }
+  .content .article {
+    padding-right: 25px;
+
+    .font-h2 {
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    .font {
+      font-size: 12px;
+      line-height: 25px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 25px;
+    }
+
+    .button-content {
+      font-size: 12px;
+    }
+
+    .claim-right{
+      display: none;
+    }
+  }
+  /*FINISH MAIN-CONTAINER
+ ---------------------------------------------------------------------------*/
+
+  /* FOOTER
+-----------------------------------------------------------------------------*/
+  .footer {
+    .container{
+      .col {
+
+         a{
+          font-size: 10px;
+          line-height: 18px;
+        }
+
+        h3 {
+          @include fontSize_pad(12px, 0 0 5px 0);
+        }
+
+        p{
+          font-size: 10px;
+          line-height: 18px;
+
+        }
+      }
+    }
+    .info{
+      @include fontSize_pad(10px, 25px 0 0 0);
+
+    }
+  }
+}
+/* FINISH FOOTER
+-----------------------------------------------------------------------------*/
+/*FINISH MEDIA
+-----------------------------------------------------------------------------*/
